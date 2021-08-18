@@ -1,4 +1,8 @@
 class Chicken extends MoveableObject {
 
 
+constructor() {
+    super().loadImage('El-pollo-loco/img/3.Secuencias_Enemy_básico/Versión_Gallinita (estas salen por orden de la gallina gigantona)/1.Ga_paso_derecho.png');
+}
+
 }
