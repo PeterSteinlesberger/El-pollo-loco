@@ -11,28 +11,21 @@ canvas;
 constructor(canvas) {
 this.ctx = canvas.getContext('2d');
 this.canvas = canvas;
-this.drawCharacter();
-
-this.drawEnemies();
+this.draw();
 }
 
-    drawCharacter() {
+    draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-       this.ctx.drawImage(this.character.img, this.character.x, this.character.y, this.character.width, this.character.height);
-    
+       this.ctx.drawImage(this.character.img, this.character.x, this.character.y, this.character.width, this.character.height );
+    this.enemies.forEach(enemy => {
+        this.ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height );
+    })
 
        //drawCharcter wird immer wieder aufgerufen
        let self = this;
        requestAnimationFrame(function() {
-           self.drawCharacter();
+           self.draw();
        })
     }
-
-drawEnemies() {
-for (let i = 0; i < enemies.length; i++) {
-    enemie = this.enemies[i];
-    this.ctx.drawImage(this.enemie.img, this.enemie.x, this.enemie.y, this.enemie.width, this.enemie.height);
-}
-}
 
 }
