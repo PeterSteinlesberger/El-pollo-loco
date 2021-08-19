@@ -10,7 +10,7 @@ clouds = [
     ];
 
 backgroundObjects = [
-    new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png')
+    new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png', 0, 0)
     ];
 canvas;
 ctx;
