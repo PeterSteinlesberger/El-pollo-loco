@@ -8,6 +8,10 @@ class World {
     clouds = [
         new Cloud()
     ];
+
+    backgroundObjects = [
+new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png')
+    ];
 canvas;
     ctx;
 
@@ -19,14 +23,16 @@ this.draw();
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-       this.ctx.drawImage(this.character.img, this.character.x, this.character.y, this.character.width, this.character.height );
+       this.addToMap(this.character);
     this.enemies.forEach(enemy => {
-        this.ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height );
+        this.addToMap(enemy);
     })
     this.clouds.forEach(cloud => {
-        this.ctx.drawImage(cloud.img, cloud.x, cloud.y, cloud.width, cloud.height );
+        this.addToMap(cloud);
     })
 
+
+    
        //drawCharcter wird immer wieder aufgerufen
        let self = this;
        requestAnimationFrame(function() {
@@ -34,4 +40,7 @@ this.draw();
        })
     }
 
+addToMap(mo) {
+        this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height );
+    }
 }
