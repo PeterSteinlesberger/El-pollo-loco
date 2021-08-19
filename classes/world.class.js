@@ -10,7 +10,9 @@ clouds = [
     ];
 
 backgroundObjects = [
-    new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png', 0, 0)
+    new BackgroundObject('img/5.Fondo/Capas/3.Fondo3/1.png', 0),
+    new BackgroundObject('img/5.Fondo/Capas/2.Fondo2/1.png', 0),
+    new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png', 0)
     ];
 canvas;
 ctx;
@@ -23,10 +25,11 @@ this.draw();
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+       this.addObjectToMap(this.backgroundObjects); 
        this.addToMap(this.character);
        this.addObjectToMap(this.clouds);
        this.addObjectToMap(this.enemies);
-       this.addObjectToMap(this.backgroundObjects);
+      
 
     
        //drawCharcter wird immer wieder aufgerufen
