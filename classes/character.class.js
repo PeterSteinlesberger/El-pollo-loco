@@ -10,7 +10,7 @@ class Character extends MoveableObject {
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-25.png",
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-26.png",
   ];
-
+world;
 
   constructor() {
     super().loadImage(
