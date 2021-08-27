@@ -49,10 +49,7 @@ walking_sound = new Audio('audio/walking.mp3');
 
       if(this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
         //Walking animation
-      let i = this.currentImage % this.IMAGES_WALKING.length;
-      let path = this.IMAGES_WALKING[i];
-      this.img = this.imageCache[path];
-      this.currentImage++;
+      this.animateImages(this.IMAGES_WALKING);
     }}, 70);
 
   }
