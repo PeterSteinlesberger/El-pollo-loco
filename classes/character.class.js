@@ -12,6 +12,7 @@ class Character extends MoveableObject {
   ];
 world;
 speed = 8;
+walking_sound = new Audio('audio/walking.mp3');
 
   constructor() {
     super().loadImage(
@@ -27,14 +28,17 @@ speed = 8;
   animate() {
 
     setInterval(() => {
+      this.walking_sound.pause();
       if(this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
       this.x += this.speed;
       this.otherDirection = false;
+      this.walking_sound.play();
       }
 
     if(this.world.keyboard.LEFT && this.x > 120 ) {
       this.x -= this.speed;
       this.otherDirection = true;
+      this.walking_sound.play();
       }
       this.world.camera_x = -this.x +120;
   }, 1000 / 60);
