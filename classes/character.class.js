@@ -28,6 +28,8 @@ IMAGES_JUMPING = [
 world;
 speed = 8;
 walking_sound = new Audio('audio/walking.mp3');
+jumping_sound = new Audio('audio/jumping.mp3');
+
 
   constructor() {
     super().loadImage(
@@ -52,13 +54,13 @@ walking_sound = new Audio('audio/walking.mp3');
     if(this.world.keyboard.LEFT && this.x > 120 ) {
        this.moveLeft();
    this.otherDirection = true;
+   this.walking_sound.play();
 }
       
-      this.walking_sound.play();
-      }
       
       if(this.world.keyboard.SPACE && !this.isAboveGround()) {
         this.jump();
+        this.jumping_sound.play();
 }
       this.world.camera_x = -this.x +120;
   }, 1000 / 60);
@@ -75,7 +77,8 @@ if(this.isAboveGround()) {
       this.animateImages(this.IMAGES_WALKING);
       }
     }}, 70);
-
-    
   }
 }
+
+
+

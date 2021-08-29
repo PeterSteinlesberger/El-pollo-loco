@@ -51,6 +51,7 @@ this.imageCache[path] = img;
   jump() {
     this.speedY = 27;
   }
+  
   animateImages(images) {
     let i = this.currentImage % this.IMAGES_WALKING.length;
     let path = images[i];
