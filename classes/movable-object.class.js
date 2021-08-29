@@ -8,7 +8,23 @@ imageCache = {};
 currentImage = 0;
 speed = 0.11;
 otherDirection = false;
+speedY = 0;
+acceleration = 2.65;
 
+applyGravity() { 
+   
+    setInterval(() => { 
+        if(this.isAboveGround() || this.speedY > 0) {
+this.y -= this.speedY;
+this.speedY -= this.acceleration; 
+        }
+    }, 1000 / 25);
+}
+
+
+isAboveGround() {
+   return this.y < 165;
+}
 
 
 loadImage(path) {
@@ -25,20 +41,23 @@ this.imageCache[path] = img;
 }
 
     moveRight() {
-        console.log('Moving Right', character);
+        this.x += this.speed;
     }
 
     moveLeft() {
-        setInterval(() => {
            this.x -= this.speed;  
-      }, 1000 / 60);
   }
 
+  jump() {
+    this.speedY = 27;
+  }
   animateImages(images) {
     let i = this.currentImage % this.IMAGES_WALKING.length;
     let path = images[i];
     this.img = this.imageCache[path];
     this.currentImage++;
   }
+
+
 
 }
