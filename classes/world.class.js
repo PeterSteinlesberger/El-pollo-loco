@@ -55,8 +55,9 @@ if(mo.otherDirection) {
     checkCollisions() {
         setInterval(() => {
             this.level.enemies.forEach((enemy) => {
-                if( this.character.isColliding(enemy) ) {
-                    console.log('Collision with Character', enemy);
+                if( this.character.isColliding(enemy) ) { 
+                    this.character.energy -= 7;
+                    console.log('Collision with Character', this.character.energy);
                 }
             });
         }, 200);

@@ -10,6 +10,7 @@ speed = 0.11;
 otherDirection = false;
 speedY = 0;
 acceleration = 2.65;
+energy = 100;
 
 applyGravity() { 
    
