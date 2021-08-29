@@ -13,6 +13,7 @@ this.canvas = canvas;
 this.keyboard = keyboard;
 this.setWorld();
 this.draw();
+this.checkCollisions();
 }
 
     draw() {
@@ -46,13 +47,19 @@ addToMap(mo) {
         mo.draw(this.ctx);
         mo.drawFrame(this.ctx);
       
-
-
-
-
 if(mo.otherDirection) {
     this.flipImageBack(mo);
 }
+    }
+
+    checkCollisions() {
+        setInterval(() => {
+            this.level.enemies.forEach((enemy) => {
+                if( this.character.isColliding(enemy) ) {
+                    console.log('Collision with Character', enemy);
+                }
+            });
+        }, 200);
     }
 
 
@@ -72,12 +79,7 @@ flipImageBack(mo) {
     this.ctx.restore();
 }
 
-isColliding(mo) {
-    return this.x + this.width > mo.x &&
-    this.y + this.height > mo.y &&
-    this.x < mo.x &&
-    this.y < mo.y + mo.height
-}
+
 
 
 }
