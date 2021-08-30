@@ -1,4 +1,4 @@
-class MoveableObject {
+class MoveableObject extends DrawableObject {
     x = 120;
     y = 210;
     img;
