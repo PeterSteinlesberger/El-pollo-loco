@@ -1,27 +1,32 @@
-class StatusBar {
+class StatusBar extends DrawableObject {
 
 IMAGES_ENERGY = [
 'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
-'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
-'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
-'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
-'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
-'img/7.Marcadores/Barra/Marcador vida/azul/0_.png'
+'img/7.Marcadores/Barra/Marcador vida/azul/20_.png',
+'img/7.Marcadores/Barra/Marcador vida/azul/40_.png',
+'img/7.Marcadores/Barra/Marcador vida/azul/60_.png',
+'img/7.Marcadores/Barra/Marcador vida/azul/80_.png',
+'img/7.Marcadores/Barra/Marcador vida/azul/100_.png'
 ];
 
 percentage = 100;
 
 
 constructor() {
+super();
 this.loadImages(this.IMAGES_ENERGY);
+this.setPercentage(100);
 
 }
 
 
 setPercentage(percentage) {
     this.percentage = percentage;
+let path = this.IMAGES_ENERGY[this.resolveImageIndex()];
+    this.img = this.imageCache[path];
 }
-    rexolveImageIndex() {
+
+    resolveImageIndex() {
 if(this.percentage == 100) {
 return 5;
 } else if(this.percentage > 80) {
@@ -32,11 +37,9 @@ return 5;
     return 2;
 } else if(this.percentage > 20) {
     return 1;
-} else if(this.percenage < 20) {
+} else {
     return 0;
 }
-
-
 }
 
 }
