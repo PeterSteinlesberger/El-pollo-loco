@@ -11,6 +11,8 @@ otherDirection = false;
 speedY = 0;
 acceleration = 2.65;
 energy = 100;
+lastHit = 0;
+
 
 applyGravity() { 
    
@@ -63,6 +65,25 @@ isColliding(mo) {
     this.y < mo.y + mo.height;
 }
 
+hit() {
+    this.energy -= 7;
+    if(this.energy <= 0) {
+        this.energy = 0;
+    } else {
+        this.lastHit = new Date().getTime();
+    }
+}
+
+isHurt() {
+    let timePassed = new Date().getTime() - this.lastHit; // difference in milliseconds
+    timePassed = timePassed / 1000; // difference in seconds 
+    return timePassed < 0.8;
+}
+
+isDead() {
+return this.energy == 0;
+}
+
     moveRight() {
         this.x += this.speed;
     }
@@ -76,7 +97,7 @@ isColliding(mo) {
   }
 
   animateImages(images) {
-    let i = this.currentImage % this.IMAGES_WALKING.length;
+    let i = this.currentImage % images.length;
     let path = images[i];
     this.img = this.imageCache[path];
     this.currentImage++;

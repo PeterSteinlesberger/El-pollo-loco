@@ -55,10 +55,10 @@ if(mo.otherDirection) {
     checkCollisions() {
         setInterval(() => {
             this.level.enemies.forEach((enemy) => {
-                if( this.character.isColliding(enemy) ) { 
-                    this.character.energy -= 7;
+                if( this.character.isColliding(enemy)) { 
+                    this.character.hit(); 
                     console.log('Collision with Character', this.character.energy);
-                }
+                }   
             });
         }, 200);
     }
