@@ -22,7 +22,7 @@ this.speedY -= this.acceleration;
 isAboveGround() {
    return this.y < 165;
 }
-
+ 
 
 isColliding(mo) {
     return this.x + this.width > mo.x &&

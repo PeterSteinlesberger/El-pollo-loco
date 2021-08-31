@@ -6,6 +6,7 @@ class World {
   keyboard;
   camera_x = 0;
   statusBar = new StatusBar();
+  throwableObjects = [new ThrowableObject()];
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -30,7 +31,7 @@ class World {
 
     this.addObjectToMap(this.level.clouds);
     this.addObjectToMap(this.level.enemies);
-
+this.addObjectToMap(this.throwableObjects);
     this.ctx.translate(-this.camera_x, 0);
 
     //drawCharcter wird immer wieder aufgerufen
