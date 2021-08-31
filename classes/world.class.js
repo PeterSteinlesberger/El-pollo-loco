@@ -22,7 +22,12 @@ class World {
     this.ctx.translate(this.camera_x, 0);
     this.addObjectToMap(this.level.backgroundObjects);
     this.addToMap(this.character);
+
+    this.ctx.translate(-this.camera_x, 0);
+    // ----------- Space for fixed objects ------------
     this.addToMap(this.statusBar);
+    this.ctx.translate(this.camera_x, 0);
+
     this.addObjectToMap(this.level.clouds);
     this.addObjectToMap(this.level.enemies);
 
@@ -58,7 +63,7 @@ class World {
       this.level.enemies.forEach((enemy) => {
         if (this.character.isColliding(enemy)) {
           this.character.hit();
-          console.log("Collision with Character", this.character.energy);
+          this.statusBar.setPercentage(this.character.energy);
         }
       });
     }, 200);

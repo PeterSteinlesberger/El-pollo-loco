@@ -18,7 +18,7 @@ this.loadImages(this.IMAGES_ENERGY);
 this.setPercentage(100);
 this.x = 15;
 this.y = 0;
-this.height = 50;
+this.height = 55;
 this.width = 180;
 }
 
