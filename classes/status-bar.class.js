@@ -16,7 +16,10 @@ constructor() {
 super();
 this.loadImages(this.IMAGES_ENERGY);
 this.setPercentage(100);
-
+this.x = 15;
+this.y = 0;
+this.height = 50;
+this.width = 180;
 }
 
 
