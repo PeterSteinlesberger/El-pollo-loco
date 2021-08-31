@@ -13,7 +13,6 @@ this.throw(100, 170);
     }
 
 throw(x, y) {
-
     this.x = x;
     this.y = y;
     this.speedY = 30;

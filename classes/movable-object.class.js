@@ -20,7 +20,11 @@ this.speedY -= this.acceleration;
 
 
 isAboveGround() {
+    if(this instanceof ThrowableObject) {  //ThroabeObjects should always fall
+        return true;
+    } else {
    return this.y < 165;
+} 
 }
  
 
