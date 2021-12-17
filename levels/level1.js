@@ -12,13 +12,26 @@ const level1 = new Level(
         new Chicken(),
         new Chicken(),
         new Chicken(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
+        new Cocina(),
         new Endboss()
     ],
     [
-        new Cloud(),
-        new Cloud(),
-        new Cloud(),
-        new Cloud()
+        new Cloud('img/5.Fondo/Capas/4.nubes/1.png', 600),
+        new Cloud('img/5.Fondo/Capas/4.nubes/1.png', 1800),
+        new Cloud('img/5.Fondo/Capas/4.nubes/2.png', 2900),
+        new Cloud('img/5.Fondo/Capas/4.nubes/1.png', 4400),
+        new Cloud('img/5.Fondo/Capas/4.nubes/2.png', 6400)
     ],
     [
     
@@ -66,5 +79,15 @@ const level1 = new Level(
         new BackgroundObject('img/5.Fondo/Capas/3.Fondo3/1.png', 719*10),
         new BackgroundObject('img/5.Fondo/Capas/2.Fondo2/1.png', 719*10),
         new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png', 719*10)
+        ],
+        [
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png'),
+            new Coin('img/8.Coin/Moneda1.png')
         ]
 );

@@ -8,7 +8,6 @@ class World {
   statusBar = new StatusBar();
   bottleBar = new BottleBar();
   coinBar = new CoinBar();
-  coin = new Coin();
   throwableObjects = [];
 
   constructor(canvas, keyboard) {
@@ -22,23 +21,24 @@ class World {
 
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-   
+
     this.ctx.translate(this.camera_x, 0);
     this.addObjectToMap(this.level.backgroundObjects);
     this.addToMap(this.character);
 
     this.ctx.translate(-this.camera_x, 0);
     // ----------- Space for fixed objects ------------
-   
-    this.addToMap(this.coinBar);
+
     this.addToMap(this.bottleBar);
-    this.addToMap(this.statusBar); 
-    this.addToMap(this.coin);
+    this.addToMap(this.statusBar);
+    this.addToMap(this.coinBar);
     this.ctx.translate(this.camera_x, 0);
+
 
     this.addObjectToMap(this.level.clouds);
     this.addObjectToMap(this.level.enemies);
-this.addObjectToMap(this.throwableObjects);
+    this.addObjectToMap(this.throwableObjects);
+    this.addObjectToMap(this.level.coins);
     this.ctx.translate(-this.camera_x, 0);
 
     //drawCharcter wird immer wieder aufgerufen
@@ -68,26 +68,26 @@ this.addObjectToMap(this.throwableObjects);
 
   run() {
     setInterval(() => {
-     this.checkThrowObjects();
-          this.checkCollisions();
-      
+      this.checkThrowObjects();
+      this.checkCollisions();
+
     }, 200);
   }
 
   checkCollisions() {
-       this.level.enemies.forEach((enemy) => {
-        if (this.character.isColliding(enemy)) {
-          this.character.hit();
-          this.statusBar.setPercentage(this.character.energy);
-        }
+    this.level.enemies.forEach((enemy) => {
+      if (this.character.isColliding(enemy)) {
+        this.character.hit();
+        this.statusBar.setPercentage(this.character.energy);
+      }
     });
   }
 
   checkThrowObjects() {
-      if(this.keyboard.D) {
-          let bottle = new ThrowableObject(this.character.x +56, this.character.y + 122);
-          this.throwableObjects.push(bottle);
-      }
+    if (this.keyboard.D) {
+      let bottle = new ThrowableObject(this.character.x + 56, this.character.y + 122);
+      this.throwableObjects.push(bottle);
+    }
   }
 
   setWorld() {
