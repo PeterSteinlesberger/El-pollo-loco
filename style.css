@@ -5,5 +5,28 @@ body {
 }
 
 canvas {
+    display: none;
     background-color: black;
+}
+
+.start-screen {
+    display: block;
+    width: 720px; 
+    height: 480px;
+    background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
+    object-fit: cover;
+    background-size: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.start-button {
+    height: 80px;
+    width: 100%;
+    color: rgb(255, 213, 24);
+    text-shadow: -2px 3px 0px rgba(205,114,0,0.8);
+    background: radial-gradient(circle, rgb(226, 160, 74) 80%, rgb(156, 97, 34) 100%);
+    font-family: 'Old Standard TT', serif;
+    font-size: 70px;
+    border: solid 2px rgba(114, 44, 4, 0.9);
 }

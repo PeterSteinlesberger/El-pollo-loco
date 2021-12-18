@@ -1,6 +1,7 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
+let startScreenSound = new Audio('audio/startscreen-song.mp3');
 
 function init() {
   canvas = document.getElementById("canvas");
@@ -49,3 +50,11 @@ window.addEventListener("keydown", (event) => {
       keyboard.D = false;
     }
 });
+
+
+function startGame() {
+  startScreenSound.play();
+  document.getElementById('startScreen').style.display = 'none';
+  document.getElementById('canvas').style.display = 'block';
+  init();
+}

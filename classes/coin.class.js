@@ -1,10 +1,10 @@
-class Coin extends DrawableObject {
+class Coin extends BackgroundObject {
   height = 120;
   width = 120;
 
-  constructor() {
-   super().loadImage('img/8.Coin/Moneda1.png');
-    this.x = 250;
-    this.y = 240;
+  constructor(imagePath, x, y) {
+   super().loadImage(imagePath);
+   this.x = x;
+   this.y = y;
 }
 }
