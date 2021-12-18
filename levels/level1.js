@@ -83,17 +83,27 @@ const level1 = new Level(
     [
         new Coin('img/8.Coin/Moneda1.png', 4200, 220),
         new Coin('img/8.Coin/Moneda1.png', 4240, 180),
-        new Coin('img/8.Coin/Moneda1.png', 4280, 140),
         new Coin('img/8.Coin/Moneda1.png', 4320, 180),
         new Coin('img/8.Coin/Moneda1.png', 4360, 220),
         new Coin('img/8.Coin/Moneda1.png', 930, 360),
         new Coin('img/8.Coin/Moneda1.png', 1330, 360),
         new Coin('img/8.Coin/Moneda1.png', 3030, 360),
         new Coin('img/8.Coin/Moneda1.png', 2240, 180),
-        new Coin('img/8.Coin/Moneda1.png', 2280, 140),
         new Coin('img/8.Coin/Moneda1.png', 2320, 180),  
         new Coin('img/8.Coin/Moneda1.png', 4630, 360),
         new Coin('img/8.Coin/Moneda1.png', 5330, 360),
-        new Coin('img/8.Coin/Moneda1.png', 6030, 360)   
+        new Coin('img/8.Coin/Moneda1.png', 6030, 180)   
+    ],
+    [
+        
+        new Bottle('img/6.botella/1.Marcador.png', 4320, 160),
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 3620, 360),
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 4000, 350),
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 1130, 360),
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 1830, 350),
+        new Bottle('img/6.botella/1.Marcador.png', 2320, 140), 
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 4830, 350),
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 5130, 360),
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 6330, 350)   
     ]
 );

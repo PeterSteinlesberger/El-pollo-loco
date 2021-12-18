@@ -39,6 +39,7 @@ class World {
     this.addObjectToMap(this.level.enemies);
     this.addObjectToMap(this.throwableObjects);
     this.addObjectToMap(this.level.coins);
+    this.addObjectToMap(this.level.bottles);
     this.ctx.translate(-this.camera_x, 0);
 
     //drawCharcter wird immer wieder aufgerufen
