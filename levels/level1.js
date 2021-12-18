@@ -81,13 +81,19 @@ const level1 = new Level(
         new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png', 719 * 10)
     ],
     [
-        new Coin('img/8.Coin/Moneda1.png', 140, 200),
-        new Coin('img/8.Coin/Moneda1.png', 220, 200),
-        new Coin('img/8.Coin/Moneda1.png', 330, 150),
-        new Coin('img/8.Coin/Moneda1.png', 330, 180),
-        new Coin('img/8.Coin/Moneda1.png', 330, 140),
-        new Coin('img/8.Coin/Moneda1.png', 330, 120),
-        new Coin('img/8.Coin/Moneda1.png', 330, 100),
-        new Coin('img/8.Coin/Moneda1.png', 330, 60)
+        new Coin('img/8.Coin/Moneda1.png', 4200, 220),
+        new Coin('img/8.Coin/Moneda1.png', 4240, 180),
+        new Coin('img/8.Coin/Moneda1.png', 4280, 140),
+        new Coin('img/8.Coin/Moneda1.png', 4320, 180),
+        new Coin('img/8.Coin/Moneda1.png', 4360, 220),
+        new Coin('img/8.Coin/Moneda1.png', 930, 360),
+        new Coin('img/8.Coin/Moneda1.png', 1330, 360),
+        new Coin('img/8.Coin/Moneda1.png', 3030, 360),
+        new Coin('img/8.Coin/Moneda1.png', 2240, 180),
+        new Coin('img/8.Coin/Moneda1.png', 2280, 140),
+        new Coin('img/8.Coin/Moneda1.png', 2320, 180),  
+        new Coin('img/8.Coin/Moneda1.png', 4630, 360),
+        new Coin('img/8.Coin/Moneda1.png', 5330, 360),
+        new Coin('img/8.Coin/Moneda1.png', 6030, 360)   
     ]
 );
