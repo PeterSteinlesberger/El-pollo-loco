@@ -65,3 +65,13 @@ function startGame() {
 function playSound() {
   START_SCREEN_SOUND.play();
 }
+
+function showKeyboardImg() {
+  document.getElementById('keyboardImgBig').style.display = "block";
+  document.getElementById('keyboardImgSmall').style.display = "none";
+}
+
+function removeKeyboardImg() {
+  document.getElementById('keyboardImgSmall').style.display = "block";
+  document.getElementById('keyboardImgBig').style.display = "none";
+}

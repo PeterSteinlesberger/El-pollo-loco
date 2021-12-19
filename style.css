@@ -20,13 +20,46 @@ canvas {
     align-items: flex-end;
 }
 
-.start-button {
-    height: 80px;
+.bottom-div {
+    height: 70px;
     width: 100%;
-    color: rgb(255, 213, 24);
-    text-shadow: -2px 3px 0px rgba(205,114,0,0.8);
-    background: radial-gradient(circle, rgb(226, 160, 74) 80%, rgb(156, 97, 34) 100%);
-    font-family: 'Old Standard TT', serif;
-    font-size: 70px;
-    border: solid 2px rgba(114, 44, 4, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #994409;
+    padding: 5px 15px 10px 15px;;
 }
+
+.start-button {
+    height: 60px;
+    width: 200px;
+    color: #ffcb00;
+    text-shadow: -2px 3px 0px rgba(105, 58, 0, 0.8);
+    background: radial-gradient(circle, rgb(179, 116, 35) 80%, rgb(156, 97, 34) 100%);
+    font-family: 'Old Standard TT', serif;
+    font-size: 45px;
+    border: solid 2px rgba(114, 44, 4, 0.9);
+    padding-top: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.keyboard-img {
+    width: 190px;
+    height: 70px;
+}
+
+.keyboard-img-big {
+    width: 430px;
+    height: 180px;
+    margin-bottom: 90px;
+}
+
+
+.fullscreen-img {
+    height: 40px;
+    margin-top: 30px;
+}
+
