@@ -3,7 +3,7 @@ let world;
 let keyboard = new Keyboard();
 let START_SCREEN_SOUND = new Audio('audio/startscreen-song.mp3');
 let INGAME_SOUND = new Audio('audio/ingamesound.mp3');
-
+let screenSize = 0;
 
 function init() {
   canvas = document.getElementById("canvas");
@@ -60,6 +60,7 @@ function startGame() {
   document.getElementById('startScreen').style.display = 'none';
   document.getElementById('canvas').style.display = 'block';
   init();
+  whichScreenSize();
 }
 
 function playSound() {
@@ -75,3 +76,17 @@ function removeKeyboardImg() {
   document.getElementById('keyboardImgSmall').style.display = "block";
   document.getElementById('keyboardImgBig').style.display = "none";
 }
+
+function fullscreenMode() {
+  let startScreen = document.getElementById('startScreen'); 
+  startScreen.style.width = "100%";
+startScreen.style.height = "100vh";
+screenSize = 1;
+}
+
+function whichScreenSize() {
+  if(screenSize > 0) {
+    canvas.requestFullscreen();
+  } 
+}
+
