@@ -12,7 +12,8 @@ class World {
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
-
+  START_SCREEN_SOUND = new Audio('audio/startscreen-song.mp3');
+  INGAME_SOUND = new Audio('audio/ingamesound.mp3');
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -21,6 +22,7 @@ class World {
     this.setWorld();
     this.draw();
     this.run();
+    this.playSound();
 
   }
 
@@ -109,7 +111,7 @@ class World {
   }
 
   checkThrowObjects() {
-    if (this.keyboard.D) {
+    if (this.keyboard.CRTL) {
       let bottle = new ThrowableObject(this.character.x + 56, this.character.y + 122);
       this.throwableObjects.push(bottle);
     }
@@ -145,6 +147,13 @@ class World {
     }
   }
 
+  playSound() {
+    START_SCREEN_SOUND.volume = 0.3;
+   START_SCREEN_SOUND.play();
+ }
 
+// INGAME_SOUND.volume = 0.15;
+ // INGAME_SOUND.play();
+ // START_SCREEN_SOUND.pause();
 
 }

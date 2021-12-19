@@ -1,8 +1,6 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
-let START_SCREEN_SOUND = new Audio('audio/startscreen-song.mp3');
-let INGAME_SOUND = new Audio('audio/ingamesound.mp3');
 let screenSize = 0;
 
 function init() {
@@ -26,8 +24,8 @@ window.addEventListener("keydown", (event) => {
   if (event.keyCode == 32) {
     keyboard.SPACE = true;
   }
-  if (event.keyCode == 68) {
-    keyboard.D = true;
+  if (event.keyCode == 17) {
+    keyboard.CRTL = true;
   }
 });
 
@@ -48,25 +46,17 @@ window.addEventListener("keydown", (event) => {
     if (event.keyCode == 32) {
       keyboard.SPACE = false;
     }
-    if (event.keyCode == 68) {
-      keyboard.D = false;
+    if (event.keyCode == 17) {
+      keyboard.CRTL = false;
     }
 });
 
 
-function startGame() {
-  INGAME_SOUND.volume = 0.15;
-  INGAME_SOUND.play();
-  START_SCREEN_SOUND.pause();
+function startGame() { 
   document.getElementById('startScreen').style.display = 'none';
   document.getElementById('canvas').style.display = 'block';
   init();
   whichScreenSize();
-}
-
-function playSound() {
-  START_SCREEN_SOUND.volume = 0.3;
-  START_SCREEN_SOUND.play();
 }
 
 function showKeyboardImg() {
