@@ -30,7 +30,8 @@ IMAGES_DEAD = [
   'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-53.png',
   'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-54.png',
   'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-55.png',
-  'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-56.png'
+  'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-56.png',
+  'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-57.png'
 ];
 
 IMAGES_HURT = [
@@ -38,6 +39,7 @@ IMAGES_HURT = [
   'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-42.png',
   'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png'
 ];
+
 world;
 speed = 8;
 walking_sound = new Audio('audio/walking.mp3');

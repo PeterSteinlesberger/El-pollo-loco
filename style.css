@@ -63,10 +63,22 @@ border: solid 1px #ffcb00;
     height: 70px;
 }
 
+.keyboard-img:hover {
+    border-radius: 5px;
+    background-color: #ffcb00;
+    opacity: 0.9;
+}
+
 .keyboard-img-big {
     width: 430px;
     height: 180px;
     margin-bottom: 90px;
+}
+
+.keyboard-img-big:hover {
+    background-color: #ffcb00;;
+    opacity: 0.9;
+    border-radius: 15px;
 }
 
 

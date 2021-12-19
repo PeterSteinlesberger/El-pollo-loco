@@ -7,7 +7,7 @@ class CoinBar extends DrawableObject {
         'img/7.Marcadores/Barra/Marcador moneda/azul/80_.png',
         'img/7.Marcadores/Barra/Marcador moneda/azul/100_.png'
     ];
-    percentage = 0;
+    percentage;
 
 
 constructor() {

@@ -71,7 +71,4 @@ class MoveableObject extends DrawableObject {
         this.img = this.imageCache[path];
         this.currentImage++;
     }
-
-
-
 }

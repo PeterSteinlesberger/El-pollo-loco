@@ -10,6 +10,9 @@ class World {
   coinBar = new CoinBar();
   gameOverScreen = new GameOverScreen();
   throwableObjects = [];
+  GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
+  SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
+
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -18,6 +21,7 @@ class World {
     this.setWorld();
     this.draw();
     this.run();
+
   }
 
   draw() {
@@ -30,15 +34,18 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     // ----------- Space for fixed objects ------------
 
-if(this.character.energy <= 0) {
-  this.addToMap(this.gameOverScreen);
-}  
+    if (this.character.energy == 0) {
+      this.addToMap(this.gameOverScreen);
+      // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">START</a>`;
+    }
+
+
 
 
     this.addToMap(this.bottleBar);
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
-    
+
     this.ctx.translate(this.camera_x, 0);
 
 
@@ -77,16 +84,26 @@ if(this.character.energy <= 0) {
   run() {
     setInterval(() => {
       this.checkThrowObjects();
-      this.checkCollisions();
+      this.checkCollisionsWithEnemies();
+      this.checkCollisionsWithCoins();
 
     }, 200);
   }
 
-  checkCollisions() {
+  checkCollisionsWithEnemies() {
     this.level.enemies.forEach((enemy) => {
       if (this.character.isColliding(enemy)) {
         this.character.hit();
         this.statusBar.setPercentage(this.character.energy);
+        this.playGameOverSound();
+      }
+    });
+  }
+
+  checkCollisionsWithCoins() {
+    this.level.coins.forEach((coin) => {
+      if (this.character.isColliding(coin)) {
+        this.coinBar.setPercentage(percentage);
       }
     });
   }
@@ -113,4 +130,21 @@ if(this.character.energy <= 0) {
     mo.x = mo.x * -1;
     this.ctx.restore();
   }
+
+  playGameOverSound() {
+    if (this.character.energy <= 0) {
+      INGAME_SOUND.pause();
+      setTimeout(() => {
+        this.GAMEOVERSCREEN_SOUND.volume = 0.2;
+        this.GAMEOVERSCREEN_SOUND.play();
+      }, 3000);
+      this.SAD_TRUMPED.volume = 0.4;
+      this.SAD_TRUMPED.play();
+
+      // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">START</a>`;
+    }
+  }
+
+
+
 }

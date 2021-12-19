@@ -55,6 +55,7 @@ window.addEventListener("keydown", (event) => {
 
 
 function startGame() {
+  INGAME_SOUND.volume = 0.15;
   INGAME_SOUND.play();
   START_SCREEN_SOUND.pause();
   document.getElementById('startScreen').style.display = 'none';
@@ -64,6 +65,7 @@ function startGame() {
 }
 
 function playSound() {
+  START_SCREEN_SOUND.volume = 0.3;
   START_SCREEN_SOUND.play();
 }
 

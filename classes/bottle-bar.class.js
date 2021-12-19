@@ -18,6 +18,8 @@ this.x = 515;
 this.y = 0;
 this.height = 55;
 this.width = 180;
+this.setPercentage(0);
+
 }
 
 
