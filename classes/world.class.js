@@ -30,9 +30,10 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     // ----------- Space for fixed objects ------------
 
-if(this.charakter.isDead()) {
+if(this.character.energy <= 0) {
   this.addToMap(this.gameOverScreen);
-}
+}  
+
 
     this.addToMap(this.bottleBar);
     this.addToMap(this.statusBar);

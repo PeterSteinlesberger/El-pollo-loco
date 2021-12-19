@@ -8,7 +8,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
  }
 
 canvas {
@@ -38,15 +37,16 @@ canvas {
 }
 
 .start-button {
-    height: 60px;
-    width: 200px;
+    height: 62px;
+    width: 190px;
     color: #ffcb00;
     text-shadow: 2px 3px 0px rgba(105, 58, 0, 0.8);
     background: radial-gradient(circle, rgb(168, 100, 10) 60%, rgb(206, 110, 7) 100%);
     font-family: 'Old Standard TT', serif;
-    font-size: 45px;
+    font-size: 42px;
+    padding-top: 7px;
+    box-sizing: border-box;
     border: solid 2px rgba(114, 44, 4, 0.9);
-    padding-top: 15px;
     border-radius: 6px;
     text-decoration: none;
     display: flex;
@@ -55,6 +55,7 @@ canvas {
 
 .start-button:hover {
 text-shadow: 1px 1px 0px #ffcb00;
+border: solid 1px #ffcb00;
 }
 
 .keyboard-img {
