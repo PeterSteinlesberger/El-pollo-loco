@@ -8,6 +8,7 @@ class World {
   statusBar = new StatusBar();
   bottleBar = new BottleBar();
   coinBar = new CoinBar();
+  gameOverScreen = new GameOverScreen();
   throwableObjects = [];
 
   constructor(canvas, keyboard) {
@@ -29,9 +30,14 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     // ----------- Space for fixed objects ------------
 
+if(this.charakter.isDead()) {
+  this.addToMap(this.gameOverScreen);
+}
+
     this.addToMap(this.bottleBar);
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
+    
     this.ctx.translate(this.camera_x, 0);
 
 

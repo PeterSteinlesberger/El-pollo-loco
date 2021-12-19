@@ -41,8 +41,8 @@ canvas {
     height: 60px;
     width: 200px;
     color: #ffcb00;
-    text-shadow: -2px 3px 0px rgba(105, 58, 0, 0.8);
-    background: radial-gradient(circle, rgb(179, 116, 35) 80%, rgb(156, 97, 34) 100%);
+    text-shadow: 2px 3px 0px rgba(105, 58, 0, 0.8);
+    background: radial-gradient(circle, rgb(168, 100, 10) 60%, rgb(206, 110, 7) 100%);
     font-family: 'Old Standard TT', serif;
     font-size: 45px;
     border: solid 2px rgba(114, 44, 4, 0.9);
@@ -51,6 +51,10 @@ canvas {
     text-decoration: none;
     display: flex;
     justify-content: center;
+}
+
+.start-button:hover {
+text-shadow: 1px 1px 0px #ffcb00;
 }
 
 .keyboard-img {
@@ -69,4 +73,5 @@ canvas {
     height: 40px;
     margin-top: 30px;
 }
+
 
