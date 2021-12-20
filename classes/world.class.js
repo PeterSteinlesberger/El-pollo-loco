@@ -36,27 +36,25 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     // ----------- Space for fixed objects ------------
 
-    if (this.character.energy == 0) {
-      this.addToMap(this.gameOverScreen);
-      // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">START</a>`;
-    }
-
-
-
-
     this.addToMap(this.bottleBar);
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
 
+    
     this.ctx.translate(this.camera_x, 0);
+//--------------- Space for moveable objects ----------
 
-
-    this.addObjectToMap(this.level.clouds);
+   this.addObjectToMap(this.level.clouds);
     this.addObjectToMap(this.level.enemies);
     this.addObjectToMap(this.throwableObjects);
     this.addObjectToMap(this.level.coins);
     this.addObjectToMap(this.level.bottles);
     this.ctx.translate(-this.camera_x, 0);
+    if (this.character.energy == 0) {
+      this.addToMap(this.gameOverScreen);
+      // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">START</a>`;
+    }
+
 
     //drawCharcter wird immer wieder aufgerufen
     let self = this;
