@@ -18,7 +18,6 @@ this.x = 5;
 this.y = 35;
 this.height = 45;
 this.width = 180;
-this.setPercentage(0);
 }
 
 
@@ -28,8 +27,9 @@ let path = this.IMAGES_BOTTLES[this.resolveImageIndex()];
     this.img = this.imageCache[path];
 }
 
+
     resolveImageIndex() {
-if(this.percentage == 100) {
+if(this.percentage >= 100) {
 return 5;
 } else if(this.percentage > 80) {
     return 4;

@@ -12,7 +12,7 @@ class World {
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
-  
+
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -39,9 +39,9 @@ class World {
 
 
     this.ctx.translate(this.camera_x, 0);
-//--------------- Space for moveable objects ----------
+    //--------------- Space for moveable objects ----------
 
-   this.addObjectToMap(this.level.clouds);
+    this.addObjectToMap(this.level.clouds);
     this.addObjectToMap(this.level.enemies);
     this.addObjectToMap(this.throwableObjects);
     this.addObjectToMap(this.level.coins);
@@ -83,7 +83,7 @@ class World {
       this.checkThrowObjects();
       this.checkCollisionsWithEnemies();
       this.checkCollisionsWithCoins();
-
+      this.checkCollisionsWithBottles();
     }, 200);
   }
 
@@ -100,11 +100,21 @@ class World {
   checkCollisionsWithCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        this.charakter.coins += 10;
-        this.coinBar.setPercentage(this.charakter.coins);
+        this.character.coins += 10;
+        this.coinBar.setPercentage(this.character.coins);
       }
     });
   }
+
+  checkCollisionsWithBottles() {
+    this.level.coins.forEach((bottle) => {
+      if (this.character.isColliding(bottle)) {
+        this.character.bottles += 10;
+        this.bottleBar.setPercentage(this.character.bottles);
+      }
+    });
+  }
+
 
   checkThrowObjects() {
     if (this.keyboard.CRTL) {
