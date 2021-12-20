@@ -14,9 +14,9 @@ constructor() {
 super();
 this.loadImages(this.IMAGES_COINS);
 this.setPercentage(0);
-this.x = 270;
-this.y = 0;
-this.height = 55;
+this.x = 5;
+this.y = 74;
+this.height = 45;
 this.width = 180;
 }
 

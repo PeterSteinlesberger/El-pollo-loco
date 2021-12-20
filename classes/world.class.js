@@ -12,8 +12,7 @@ class World {
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
-  START_SCREEN_SOUND = new Audio('audio/startscreen-song.mp3');
-  INGAME_SOUND = new Audio('audio/ingamesound.mp3');
+  
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -22,8 +21,6 @@ class World {
     this.setWorld();
     this.draw();
     this.run();
-    this.playSound();
-
   }
 
   draw() {
@@ -40,7 +37,7 @@ class World {
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
 
-    
+
     this.ctx.translate(this.camera_x, 0);
 //--------------- Space for moveable objects ----------
 
@@ -103,7 +100,8 @@ class World {
   checkCollisionsWithCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        this.coinBar.setPercentage(percentage);
+        this.charakter.coins += 10;
+        this.coinBar.setPercentage(this.charakter.coins);
       }
     });
   }
@@ -145,13 +143,5 @@ class World {
     }
   }
 
-  playSound() {
-    START_SCREEN_SOUND.volume = 0.3;
-   START_SCREEN_SOUND.play();
- }
-
-// INGAME_SOUND.volume = 0.15;
- // INGAME_SOUND.play();
- // START_SCREEN_SOUND.pause();
 
 }

@@ -14,12 +14,11 @@ constructor() {
 super();
 this.loadImages(this.IMAGES_BOTTLES);
 this.setPercentage(0);
-this.x = 515;
-this.y = 0;
-this.height = 55;
+this.x = 5;
+this.y = 35;
+this.height = 45;
 this.width = 180;
 this.setPercentage(0);
-
 }
 
 

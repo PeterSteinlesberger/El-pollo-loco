@@ -2,6 +2,9 @@ class Character extends MoveableObject {
   y = 65;
   height = 270;
   width = 100;
+coins = 0;
+bottles = 0;
+
   IMAGES_WALKING = [
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png",
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-22.png",
