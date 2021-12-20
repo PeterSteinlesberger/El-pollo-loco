@@ -107,7 +107,7 @@ class World {
   }
 
   checkCollisionsWithBottles() {
-    this.level.coins.forEach((bottle) => {
+    this.level.bottles.forEach((bottle) => {
       if (this.character.isColliding(bottle)) {
         this.character.bottles += 10;
         this.bottleBar.setPercentage(this.character.bottles);
@@ -118,8 +118,12 @@ class World {
 
   checkThrowObjects() {
     if (this.keyboard.CRTL) {
+      if(this.character.bottles >= 0) {
       let bottle = new ThrowableObject(this.character.x + 56, this.character.y + 122);
-      this.throwableObjects.push(bottle);
+      this.throwableObjects.push(bottle);   
+      this.character.bottles =  this.character.bottles -10;
+      this.bottleBar.setPercentage(this.character.bottles);
+      } 
     }
   }
 
