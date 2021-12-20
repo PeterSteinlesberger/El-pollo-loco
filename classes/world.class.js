@@ -8,6 +8,7 @@ class World {
   statusBar = new StatusBar();
   bottleBar = new BottleBar();
   coinBar = new CoinBar();
+  enemyBar = new EnemyBar();
   gameOverScreen = new GameOverScreen();
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
@@ -36,7 +37,7 @@ class World {
     this.addToMap(this.bottleBar);
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
-
+    this.addToMap(this.enemyBar);
 
     this.ctx.translate(this.camera_x, 0);
     //--------------- Space for moveable objects ----------
