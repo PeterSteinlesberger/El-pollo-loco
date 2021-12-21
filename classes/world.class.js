@@ -10,10 +10,12 @@ class World {
   coinBar = new CoinBar();
   enemyBar = new EnemyBar();
   gameOverScreen = new GameOverScreen();
+  enemyBarImg = new EnemyBarImg();
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
-
+  GET_COIN = new Audio('audio/get-coin.mp3');
+  GET_BOTTLE = new Audio('audio/get-bottle.mp3');
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -38,8 +40,10 @@ class World {
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
 
+
     if (this.character.x >= 6600) {
       this.addToMap(this.enemyBar);
+      this.addToMap(this.enemyBarImg);
     }
 
     this.ctx.translate(this.camera_x, 0);
@@ -108,6 +112,8 @@ class World {
         this.character.coins += 10;
         this.level.coins.splice(this.level.coins.indexOf(coin), 1);
         this.coinBar.setPercentage(this.character.coins);
+        this.GET_COIN.volume = 0.3;
+        this.GET_COIN.play();
       }
     });
   }
@@ -118,6 +124,8 @@ class World {
         this.character.bottles += 10;
         this.level.bottles.splice(this.level.bottles.indexOf(bottle), 1);
         this.bottleBar.setPercentage(this.character.bottles);
+        this.GET_BOTTLE.volume = 0.5;
+        this.GET_BOTTLE.play();
       }
     });
   }
@@ -178,6 +186,7 @@ class World {
   playGameOverSound() {
     if (this.character.energy <= 0) {
       INGAME_SOUND.pause();
+
       setTimeout(() => {
         this.GAMEOVERSCREEN_SOUND.volume = 0.2;
         this.GAMEOVERSCREEN_SOUND.play();
