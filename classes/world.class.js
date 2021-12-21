@@ -38,9 +38,9 @@ class World {
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
 
-   if(this.character.x >= 6600) {
-    this.addToMap(this.enemyBar);
-  }
+    if (this.character.x >= 6600) {
+      this.addToMap(this.enemyBar);
+    }
 
     this.ctx.translate(this.camera_x, 0);
     //--------------- Space for moveable objects ----------
@@ -53,7 +53,7 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     if (this.character.energy == 0) {
       this.addToMap(this.gameOverScreen);
-   //   document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
+      //   document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
     }
 
 
@@ -103,10 +103,10 @@ class World {
   }
 
   checkCollisionsWithCoins() {
-    this.level.coins.forEach((coin, index) => {
+    this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
         this.character.coins += 10;
-      this.level.coins(index, -1);
+        this.level.coins.splice(this.level.coins.indexOf(coin), 1);
         this.coinBar.setPercentage(this.character.coins);
       }
     });
@@ -116,6 +116,7 @@ class World {
     this.level.bottles.forEach((bottle) => {
       if (this.character.isColliding(bottle)) {
         this.character.bottles += 10;
+        this.level.bottles.splice(this.level.bottles.indexOf(bottle), 1);
         this.bottleBar.setPercentage(this.character.bottles);
       }
     });
@@ -149,13 +150,12 @@ class World {
 
   checkThrowObjects() {
     if (this.keyboard.CRTL) {
-      if(this.character.bottles >= 0) {
-      let bottle = new ThrowableObject(this.character.x + 56, this.character.y + 122);
-      this.throwableObjects.push(bottle);   
-      this.character.bottles =  this.character.bottles -10;
-      this.bottleBar.setPercentage(this.character.bottles);
-    //  this.keyboard.CRTL = false;
-      } 
+      if (this.character.bottles >= 0) {
+        let bottle = new ThrowableObject(this.character.x + 56, this.character.y + 122);
+        this.throwableObjects.push(bottle);
+        this.character.bottles = this.character.bottles - 10;
+        this.bottleBar.setPercentage(this.character.bottles);
+      }
     }
   }
 
@@ -189,6 +189,6 @@ class World {
     }
   }
 
-   
+
 
 }
