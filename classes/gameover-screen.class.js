@@ -3,7 +3,7 @@ class GameOverScreen extends BackgroundObject {
     width = 720;
     x = 0;
     y = 0;
-    constructor() {
-        super().loadImage('img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png');
+    constructor() { 
+       super().loadImage('img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png');
     }
 }

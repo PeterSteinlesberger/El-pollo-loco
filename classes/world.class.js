@@ -37,7 +37,10 @@ class World {
     this.addToMap(this.bottleBar);
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
+
+   if(this.character.x >= 6600) {
     this.addToMap(this.enemyBar);
+  }
 
     this.ctx.translate(this.camera_x, 0);
     //--------------- Space for moveable objects ----------
@@ -50,7 +53,7 @@ class World {
     this.ctx.translate(-this.camera_x, 0);
     if (this.character.energy == 0) {
       this.addToMap(this.gameOverScreen);
-      // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">START</a>`;
+   //   document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
     }
 
 
@@ -85,6 +88,7 @@ class World {
       this.checkCollisionsWithEnemies();
       this.checkCollisionsWithCoins();
       this.checkCollisionsWithBottles();
+      checkCollisionThrowableObjectsWithEndboss();
     }, 200);
   }
 
@@ -99,9 +103,10 @@ class World {
   }
 
   checkCollisionsWithCoins() {
-    this.level.coins.forEach((coin) => {
+    this.level.coins.forEach((coin, index) => {
       if (this.character.isColliding(coin)) {
         this.character.coins += 10;
+      this.level.coins(index, -1);
         this.coinBar.setPercentage(this.character.coins);
       }
     });
@@ -116,6 +121,31 @@ class World {
     });
   }
 
+  /*
+  checkCollisionThrowableObjectsWithEndboss() {
+    this.throwableObjects.forEach((throwableObject) => {
+        let endboss = this.level.enemies[this.level.enemies.length - 1];
+        if (!endboss.isDead()) {
+            if (throwableObject.isColliding(endboss)) {
+                endboss.hit();
+                this.enemyBar.setPercentage(endboss.energy);
+           //    this.chicken_sound.play();
+            }
+        } else if (endboss.isDead) {
+            this.destroyEndboss(endboss);
+            setTimeout(() => {
+                this.finishLevel();
+            }, 2000);
+
+        }   
+
+
+    })
+
+} 
+*/
+
+
 
   checkThrowObjects() {
     if (this.keyboard.CRTL) {
@@ -124,6 +154,7 @@ class World {
       this.throwableObjects.push(bottle);   
       this.character.bottles =  this.character.bottles -10;
       this.bottleBar.setPercentage(this.character.bottles);
+    //  this.keyboard.CRTL = false;
       } 
     }
   }
@@ -158,5 +189,6 @@ class World {
     }
   }
 
+   
 
 }
