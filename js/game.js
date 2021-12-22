@@ -85,9 +85,18 @@ function whichScreenSize() {
   }
 }
 
+
 function playSound() {
-  START_SCREEN_SOUND.volume = 0.3;
+  let soundImg = document.getElementById('soundBtn');
+
+  if(soundImg.src == 'http://127.0.0.1:5500/img/7.Marcadores/Icono/soundOff.png') {
+   START_SCREEN_SOUND.volume = 0.3;
   START_SCREEN_SOUND.play();
+  soundImg.src = 'img/7.Marcadores/Icono/soundOn.png';
+ } else {
+    START_SCREEN_SOUND.pause();
+    soundImg.src = 'img/7.Marcadores/Icono/soundOff.png';
+ }
 }
 
 

@@ -94,7 +94,7 @@ class World {
       this.checkCollisionsWithEnemies();
       this.checkCollisionsWithCoins();
       this.checkCollisionsWithBottles();
-      //  this.checkCollisionThrowableObjectsWithEndboss();
+      this.checkCollisionWithThrowableObjects();
       this.playEndbossSound();
     }, 100);
   }
@@ -133,25 +133,25 @@ class World {
     });
   }
 
-  /*
-  checkCollisionThrowableObjectsWithEndboss() {
+  
+  checkCollisionWithThrowableObjects() {
     this.throwableObjects.forEach((throwableObject) => {
         let endboss = this.level.enemies[this.level.enemies.length - 1];
         if (!endboss.isDead()) {
             if (throwableObject.isColliding(endboss)) {
                 endboss.hit();
                 this.enemyBar.setPercentage(endboss.energy);
-           //    this.chicken_sound.play();
             }
         } else if (endboss.isDead) {
-            this.destroyEndboss(endboss);
+        /*    this.destroyEndboss(endboss);
             setTimeout(() => {
                 this.finishLevel();
-            }, 2000);
+            }, 2000); */
+            console.log('test');
         }   
     })
 } 
-*/
+
 
 
 

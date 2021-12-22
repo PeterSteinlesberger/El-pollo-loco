@@ -13,10 +13,11 @@ body {
 canvas {
     display: none;
     background-color: black;
+    display: relative;
 }
 
-.start-screen {
-    display: block;
+ .start-screen {
+position: relative;
     width: 720px; 
     height: 480px;
     background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
@@ -24,7 +25,8 @@ canvas {
     background-size: 100%;
     display: flex;
     align-items: flex-end;
-}
+} 
+
 
 .bottom-div {
     height: 70px;
@@ -99,4 +101,13 @@ border: solid 4px #ffcb00;
   border: solid 4px  #ffcb00;
 background-color: #ffcb00;
 opacity: 0.7;
+}
+
+.sound-btn {
+    position: absolute;
+   height: 40px;
+   width: 40px;
+   top: 20px;
+   right: 20px;
+
 }

@@ -4,6 +4,7 @@ class Character extends MoveableObject {
   width = 100;
   coins = 0;
   bottles = 0;
+  energy = 500;
 
   IMAGES_WALKING = [
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png",

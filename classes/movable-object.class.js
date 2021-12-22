@@ -4,7 +4,7 @@ class MoveableObject extends DrawableObject {
     otherDirection = false;
     speedY = 0;
     acceleration = 2.65;
-    energy = 200;
+    energy = 100;
     lastHit = 0;
 
 
@@ -35,7 +35,7 @@ class MoveableObject extends DrawableObject {
     }
 
     hit() {
-        this.energy -= 7;
+        this.energy -= 5;
         if (this.energy <= 0) {
             this.energy = 0;
         } else {
