@@ -16,6 +16,7 @@ class World {
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
   GET_COIN = new Audio('audio/get-coin.mp3');
   GET_BOTTLE = new Audio('audio/get-bottle.mp3');
+  ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -44,6 +45,7 @@ class World {
     if (this.character.x >= 6600) {
       this.addToMap(this.enemyBar);
       this.addToMap(this.enemyBarImg);
+
     }
 
     this.ctx.translate(this.camera_x, 0);
@@ -92,8 +94,9 @@ class World {
       this.checkCollisionsWithEnemies();
       this.checkCollisionsWithCoins();
       this.checkCollisionsWithBottles();
-      checkCollisionThrowableObjectsWithEndboss();
-    }, 200);
+      //  this.checkCollisionThrowableObjectsWithEndboss();
+      this.playEndbossSound();
+    }, 100);
   }
 
   checkCollisionsWithEnemies() {
@@ -145,12 +148,8 @@ class World {
             setTimeout(() => {
                 this.finishLevel();
             }, 2000);
-
         }   
-
-
     })
-
 } 
 */
 
@@ -167,9 +166,11 @@ class World {
     }
   }
 
+
   setWorld() {
     this.character.world = this;
   }
+
 
   flipImage(mo) {
     this.ctx.save();
@@ -178,26 +179,36 @@ class World {
     mo.x = mo.x * -1;
   }
 
+
   flipImageBack(mo) {
     mo.x = mo.x * -1;
     this.ctx.restore();
   }
 
+
   playGameOverSound() {
     if (this.character.energy <= 0) {
       INGAME_SOUND.pause();
-
+   
       setTimeout(() => {
         this.GAMEOVERSCREEN_SOUND.volume = 0.2;
         this.GAMEOVERSCREEN_SOUND.play();
       }, 3000);
       this.SAD_TRUMPED.volume = 0.4;
       this.SAD_TRUMPED.play();
-
-      // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">START</a>`;
     }
   }
 
 
+  playEndbossSound() {
+    if (this.character.x >= 6600) {
+      if (this.character.energy > 0) {
+        this.ENDBOSS_SOUND.volume = 0.6;
+        this.ENDBOSS_SOUND.play();
+      } else {
+        this.ENDBOSS_SOUND.pause();
+      }
+    }
+  }
 
 }

@@ -16,7 +16,7 @@ class Cocina extends MoveableObject {
         "img/3.Secuencias_Enemy_básico/Versión_pollito/1.Paso_derecho.png"
       );
       this.x = 200 + Math.random() * 8500; // generate Number between 200 up to 700
-      this.speed = 0.2 + Math.random() * 1.45;
+      this.speed = 0.4 + Math.random() * 1.85;
       this.loadImages(this.IMAGES_WALKING);
       this.animate();
     }
