@@ -12,7 +12,6 @@ class World {
   gameOverScreen = new GameOverScreen();
   youWonEndscreen = new YouWonEndscreen();
   enemyBarImg = new EnemyBarImg();
-  // endboss = new Endboss();
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
@@ -64,7 +63,10 @@ class World {
       this.addToMap(this.gameOverScreen);
       //   document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
     }
-
+    if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
+        this.addToMap(this.youWonEndscreen);
+    }
+    
 
 
     //drawCharcter wird immer wieder aufgerufen
@@ -150,17 +152,11 @@ class World {
      //   this.destroyEndboss(endboss);
         setTimeout(() => {
           this.youWonSound();
-        }, 2000);
+        }, 3000);
       }
     })
   }
-
-  endbossDead() {
-    if (world.EnemyBar.percentage <= 0) {
-      world.endboss.isDead();
-    }
-  }
-
+  
 
   checkThrowObjects() {
     if (this.keyboard.CRTL) {
