@@ -110,9 +110,18 @@ const level1 = new Level(
         new Bottle('img/6.botella/2.Botella_enterrada2.png', 3000, 350),
         new Bottle('img/6.botella/2.Botella_enterrada1.png', 6130, 360),
         new Bottle('img/6.botella/2.Botella_enterrada2.png', 5830, 350),
-        new Bottle('img/6.botella/1.Marcador.png', 2420, 140), 
+        new Bottle('img/6.botella/1.Marcador.png', 5020, 140), 
         new Bottle('img/6.botella/2.Botella_enterrada2.png', 5830, 350),
         new Bottle('img/6.botella/2.Botella_enterrada2.png', 4130, 360),
-        new Bottle('img/6.botella/2.Botella_enterrada1.png', 2330, 350)      
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 2330, 350), 
+        
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 620, 360),
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 1000, 350),
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 5130, 360),
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 2830, 350),
+        new Bottle('img/6.botella/1.Marcador.png', 4220, 140), 
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 5330, 350),
+        new Bottle('img/6.botella/2.Botella_enterrada2.png', 3130, 360),
+        new Bottle('img/6.botella/2.Botella_enterrada1.png', 2730, 350)      
     ]
 );

@@ -52,14 +52,38 @@ class Endboss extends MoveableObject {
 
 
     constructor() {
-        super().loadImage(this.IMAGES_WALKING[0]);
-        this.loadImages(this.IMAGES_WALKING);
+        super().loadImage(this.IMAGES_ATTENTION[0]);
+        this.loadImages(this.IMAGES_ATTENTION);
         this.x = 7200;
         this.animate();
     }
     animate() {
         setInterval(() => {
-            this.animateImages(this.IMAGES_WALKING);
+            this.animateImages(this.IMAGES_ATTENTION);
         }, 185);
     }
+
+
+
+/*
+    setInterval(() => {
+
+        if (this.isDead()) {
+          this.animateImages(this.IMAGES_DEAD);
+        } else if (this.isHurt()) {
+          this.animateImages(this.IMAGES_HURT);
+        }
+        if (this.isAboveGround()) {
+          this.animateImages(this.IMAGES_JUMPING);
+  
+  
+        } else {
+          if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+            //Walking animation
+            this.animateImages(this.IMAGES_WALKING);
+          }
+        }
+      }, 70);
+
+*/
 }

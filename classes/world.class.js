@@ -10,13 +10,16 @@ class World {
   coinBar = new CoinBar();
   enemyBar = new EnemyBar();
   gameOverScreen = new GameOverScreen();
+  youWonEndscreen = new YouWonEndscreen();
   enemyBarImg = new EnemyBarImg();
+  // endboss = new Endboss();
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
   GET_COIN = new Audio('audio/get-coin.mp3');
   GET_BOTTLE = new Audio('audio/get-bottle.mp3');
   ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
+  YOUWON_SOUND = new Audio('audio/won-game-sound.mp3');
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -61,6 +64,7 @@ class World {
       this.addToMap(this.gameOverScreen);
       //   document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
     }
+
 
 
     //drawCharcter wird immer wieder aufgerufen
@@ -133,26 +137,29 @@ class World {
     });
   }
 
-  
+
   checkCollisionWithThrowableObjects() {
     this.throwableObjects.forEach((throwableObject) => {
-        let endboss = this.level.enemies[this.level.enemies.length - 1];
-        if (!endboss.isDead()) {
-            if (throwableObject.isColliding(endboss)) {
-                endboss.hit();
-                this.enemyBar.setPercentage(endboss.energy);
-            }
-        } else if (endboss.isDead) {
-        /*    this.destroyEndboss(endboss);
-            setTimeout(() => {
-                this.finishLevel();
-            }, 2000); */
-            console.log('test');
-        }   
+      let endboss = this.level.enemies[this.level.enemies.length - 1];
+      if (!endboss.isDead()) {
+        if (throwableObject.isColliding(endboss)) {
+          endboss.hit();
+          this.enemyBar.setPercentage(endboss.energy);
+        }
+      } else if (endboss.isDead()) {
+     //   this.destroyEndboss(endboss);
+        setTimeout(() => {
+          this.youWonSound();
+        }, 2000);
+      }
     })
-} 
+  }
 
-
+  endbossDead() {
+    if (world.EnemyBar.percentage <= 0) {
+      world.endboss.isDead();
+    }
+  }
 
 
   checkThrowObjects() {
@@ -189,7 +196,7 @@ class World {
   playGameOverSound() {
     if (this.character.energy <= 0) {
       INGAME_SOUND.pause();
-   
+
       setTimeout(() => {
         this.GAMEOVERSCREEN_SOUND.volume = 0.2;
         this.GAMEOVERSCREEN_SOUND.play();
@@ -211,4 +218,10 @@ class World {
     }
   }
 
+ youWonSound() {
+    this.YOUWON_SOUND.volume = 0.6;
+    this.YOUWON_SOUND.play();
+  }
+
 }
+

@@ -3,6 +3,7 @@ enemies;
 clouds;
 backgroundObjects;
 coins;
+bottles;
 
 level_end_x = 7300;
  
