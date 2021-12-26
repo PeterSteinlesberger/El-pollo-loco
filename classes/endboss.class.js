@@ -5,7 +5,7 @@ class Endboss extends MoveableObject {
   y = 95;
   energy = 100;
   ANGRY_CHICKEN_SOUND = new Audio('audio/chicken-very-angry.mp3');
-  ENDBOSS_DIED = new Audio('audio/endboss-died.mp3');
+ 
 
 
   IMAGES_ATTENTION = [
@@ -62,14 +62,17 @@ class Endboss extends MoveableObject {
     this.loadImages(this.IMAGES_ATTACK);
     this.x = 7200;
     this.animate();
-  }
+  } 
+
+
   animate() {
     setInterval(() => {
       this.animateImages(this.IMAGES_ATTENTION);
       if (this.isDead()) {
         this.animateImages(this.IMAGES_DEAD);
-this.ENDBOSS_DIED.play;
-        this.y = 600;
+        this.world.ENDBOSS_SOUND.pause();
+        this.ANGRY_CHICKEN_SOUND.pause();
+// here is space for the Y axis
       } else if (this.isHurt()) {
         this.animateImages(this.IMAGES_HURT);
         if (this.energy <= 87 && this.energy >= 67) {
@@ -81,7 +84,10 @@ this.ENDBOSS_DIED.play;
         } else if (this.energy <= 40 && this.energy >= 5) {
           this.ANGRY_CHICKEN_SOUND.play();
           if (this.x > 6800) {
-            this.x -= 90;
+          this.x -= 90;
+            setInterval(() => {
+              this.x += 130;
+              }, 5000);
           }  
           this.animateImages(this.IMAGES_WALKING);
           this.animateImages(this.IMAGES_ATTACK);

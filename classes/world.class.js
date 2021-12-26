@@ -19,8 +19,8 @@ class World {
   GET_BOTTLE = new Audio('audio/get-bottle.mp3');
   ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
   YOUWON_SOUND = new Audio('audio/won-game-sound.mp3');
-endboss = new Endboss();
-
+  endboss = new Endboss();
+ 
 
 
   constructor(canvas, keyboard) {
@@ -64,15 +64,15 @@ endboss = new Endboss();
     this.ctx.translate(-this.camera_x, 0);
     if (this.character.energy == 0) {
       this.addToMap(this.gameOverScreen);
-      
+
     }
     if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
       setInterval(() => {
         this.addToMap(this.youWonEndscreen);
       }, 3000);
-    // this.level.enemies[this.level.enemies.length - 1].isDead()
+      // this.level.enemies[this.level.enemies.length - 1].isDead()
     }
-    
+
     //drawCharcter wird immer wieder aufgerufen
     let self = this;
     requestAnimationFrame(function () {
@@ -152,14 +152,14 @@ endboss = new Endboss();
           endboss.hit();
           this.enemyBar.setPercentage(endboss.energy);
         }
-      } else if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
+      } else if (this.level.enemies[this.level.enemies.length - 1].isDead()) { 
         setTimeout(() => {
           this.youWonSound();
         }, 3000);
       }
     })
   }
-  
+
 
   checkThrowObjects() {
     if (this.keyboard.CRTL) {
@@ -206,7 +206,7 @@ endboss = new Endboss();
 
 
   playEndbossSound() {
-    if (this.character.x >= 6600) {
+    if (this.character.x >= 6550) {
       if (this.character.energy > 0) {
         INGAME_SOUND.pause();
         this.ENDBOSS_SOUND.volume = 0.6;
@@ -217,7 +217,7 @@ endboss = new Endboss();
     }
   }
 
- youWonSound() {
+  youWonSound() {
     this.YOUWON_SOUND.volume = 0.6;
     this.YOUWON_SOUND.play();
   }
