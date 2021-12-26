@@ -64,10 +64,13 @@ endboss = new Endboss();
     this.ctx.translate(-this.camera_x, 0);
     if (this.character.energy == 0) {
       this.addToMap(this.gameOverScreen);
-      //   document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
+      
     }
     if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
+      setInterval(() => {
         this.addToMap(this.youWonEndscreen);
+      }, 3000);
+    // this.level.enemies[this.level.enemies.length - 1].isDead()
     }
     
     //drawCharcter wird immer wieder aufgerufen
@@ -149,10 +152,7 @@ endboss = new Endboss();
           endboss.hit();
           this.enemyBar.setPercentage(endboss.energy);
         }
-      } else if (endboss.isDead()) {
-        INGAME_SOUND.pause();
-        this.endboss.endbossDiedAnimation();
-     //   this.endboss.endbossDiedAnimation();
+      } else if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
         setTimeout(() => {
           this.youWonSound();
         }, 3000);
@@ -208,6 +208,7 @@ endboss = new Endboss();
   playEndbossSound() {
     if (this.character.x >= 6600) {
       if (this.character.energy > 0) {
+        INGAME_SOUND.pause();
         this.ENDBOSS_SOUND.volume = 0.6;
         this.ENDBOSS_SOUND.play();
       } else {
@@ -220,6 +221,11 @@ endboss = new Endboss();
     this.YOUWON_SOUND.volume = 0.6;
     this.YOUWON_SOUND.play();
   }
+
+  // document.getElementById('canvas').innerHTML += `<a href="#" class="start-button" onclick="startGame()">RESTART</a>`;
+
+
+
 
 }
 

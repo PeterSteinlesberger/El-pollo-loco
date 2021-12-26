@@ -4,6 +4,9 @@ class Endboss extends MoveableObject {
   width = 220;
   y = 95;
   energy = 100;
+  ANGRY_CHICKEN_SOUND = new Audio('audio/chicken-very-angry.mp3');
+  ENDBOSS_DIED = new Audio('audio/endboss-died.mp3');
+
 
   IMAGES_ATTENTION = [
     'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G5.png',
@@ -65,26 +68,27 @@ class Endboss extends MoveableObject {
       this.animateImages(this.IMAGES_ATTENTION);
       if (this.isDead()) {
         this.animateImages(this.IMAGES_DEAD);
+this.ENDBOSS_DIED.play;
+        this.y = 600;
       } else if (this.isHurt()) {
         this.animateImages(this.IMAGES_HURT);
-        if(this.energy <= 80 && this.energy >= 60) {
+        if (this.energy <= 87 && this.energy >= 67) {
+          this.ANGRY_CHICKEN_SOUND.play();
+          if (this.x > 7099) {
+            this.x -= 70;
+          }
           this.animateImages(this.IMAGES_ATTACK);
-        } else  if(this.energy <= 30 && this.energy >= 10) {
+        } else if (this.energy <= 40 && this.energy >= 5) {
+          this.ANGRY_CHICKEN_SOUND.play();
+          if (this.x > 6800) {
+            this.x -= 90;
+          }  
+          this.animateImages(this.IMAGES_WALKING);
           this.animateImages(this.IMAGES_ATTACK);
         }
       }
     }, 185);
-}
-
-endbossDiedAnimation() {
-  setInterval(() => {
-      if (this.energy == 0) {
-          this.y -= this.speedY;
-          this.speedY -= this.acceleration;
-      }
-  }, 1000 / 25);
-}
-
+  }
 
 }
 
