@@ -19,6 +19,9 @@ class World {
   GET_BOTTLE = new Audio('audio/get-bottle.mp3');
   ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
   YOUWON_SOUND = new Audio('audio/won-game-sound.mp3');
+endboss = new Endboss();
+
+
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -67,8 +70,6 @@ class World {
         this.addToMap(this.youWonEndscreen);
     }
     
-
-
     //drawCharcter wird immer wieder aufgerufen
     let self = this;
     requestAnimationFrame(function () {
@@ -149,7 +150,9 @@ class World {
           this.enemyBar.setPercentage(endboss.energy);
         }
       } else if (endboss.isDead()) {
-     //   this.destroyEndboss(endboss);
+        INGAME_SOUND.pause();
+        this.endboss.endbossDiedAnimation();
+     //   this.endboss.endbossDiedAnimation();
         setTimeout(() => {
           this.youWonSound();
         }, 3000);
@@ -192,7 +195,6 @@ class World {
   playGameOverSound() {
     if (this.character.energy <= 0) {
       INGAME_SOUND.pause();
-
       setTimeout(() => {
         this.GAMEOVERSCREEN_SOUND.volume = 0.2;
         this.GAMEOVERSCREEN_SOUND.play();

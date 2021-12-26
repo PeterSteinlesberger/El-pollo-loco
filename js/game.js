@@ -5,6 +5,7 @@ let screenSize = 0;
 START_SCREEN_SOUND = new Audio('audio/startscreen-song.mp3');
 INGAME_SOUND = new Audio('audio/ingamesound.mp3');
 
+
 function init() {
   canvas = document.getElementById("canvas");
   world = new World(canvas, keyboard);
@@ -91,6 +92,7 @@ function playSound() {
 
   if(soundImg.src == 'http://127.0.0.1:5500/img/7.Marcadores/Icono/soundOff.png') {
    START_SCREEN_SOUND.volume = 0.3;
+   START_SCREEN_SOUND.loop = true;
   START_SCREEN_SOUND.play();
   soundImg.src = 'img/7.Marcadores/Icono/soundOn.png';
  } else {
@@ -103,6 +105,7 @@ function playSound() {
 function startIngameSound() {
   START_SCREEN_SOUND.pause();
   INGAME_SOUND.volume = 0.15;
+  INGAME_SOUND.loop = true;
   INGAME_SOUND.play();
 }
 
