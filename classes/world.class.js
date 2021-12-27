@@ -20,7 +20,6 @@ class World {
   ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
   YOUWON_SOUND = new Audio('audio/won-game-sound.mp3');
   endboss = new Endboss();
- 
 
 
   constructor(canvas, keyboard) {
@@ -47,10 +46,9 @@ class World {
     this.addToMap(this.coinBar);
 
 
-    if (this.character.x >= 6600) {
+    if (this.character.x >= 6300) {
       this.addToMap(this.enemyBar);
       this.addToMap(this.enemyBarImg);
-
     }
 
     this.ctx.translate(this.camera_x, 0);
@@ -66,11 +64,8 @@ class World {
       this.addToMap(this.gameOverScreen);
 
     }
-    if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
-      setInterval(() => {
+    if (this.enemyBar.percentage <= 0) {
         this.addToMap(this.youWonEndscreen);
-      }, 3000);
-      // this.level.enemies[this.level.enemies.length - 1].isDead()
     }
 
     //drawCharcter wird immer wieder aufgerufen
@@ -152,10 +147,11 @@ class World {
           endboss.hit();
           this.enemyBar.setPercentage(endboss.energy);
         }
-      } else if (this.level.enemies[this.level.enemies.length - 1].isDead()) { 
+      } else if (this.level.enemies[this.level.enemies.length - 1].isDead()) {
+
         setTimeout(() => {
           this.youWonSound();
-        }, 3000);
+        }, 2000);
       }
     })
   }

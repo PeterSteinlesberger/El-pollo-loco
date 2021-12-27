@@ -92,6 +92,7 @@ class Character extends MoveableObject {
 
       if (this.isDead()) {
         this.animateImages(this.IMAGES_DEAD);
+        this.y += 10;
       } else if (this.isHurt()) {
         this.animateImages(this.IMAGES_HURT);
       }
