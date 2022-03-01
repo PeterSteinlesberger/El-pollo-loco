@@ -74,6 +74,8 @@ function removeKeyboardImg() {
 }
 
 function fullscreenMode() {
+
+  if(screenSize == 0) {
   let startScreen = document.getElementById('startScreen');
   startScreen.style.width = "100%";
   startScreen.style.height = "100vh";
@@ -83,6 +85,12 @@ function fullscreenMode() {
   startScreen.style.bottom = "0";
   startScreen.style.left = "0";
   screenSize = 1;
+  } else {
+    let smallScreen = document.getElementById('canvas');
+    smallScreen.style.width = "720px";
+    smallScreen.style.height = "480px";
+    screenSize = 0;
+  }
 }
 
 function whichScreenSize() {
