@@ -77,6 +77,11 @@ function fullscreenMode() {
   let startScreen = document.getElementById('startScreen');
   startScreen.style.width = "100%";
   startScreen.style.height = "100vh";
+  startScreen.style.position = "fixed";
+  startScreen.style.top = "0";
+  startScreen.style.right = "0";
+  startScreen.style.bottom = "0";
+  startScreen.style.left = "0";
   screenSize = 1;
 }
 
