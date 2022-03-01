@@ -60,7 +60,6 @@ function startGame() {
   document.getElementById('canvas').style.display = 'block';
   init();
   whichScreenSize();
-  startIngameSound();
 }
 
 function showKeyboardImg() {
@@ -86,9 +85,10 @@ function fullscreenMode() {
   startScreen.style.left = "0";
   screenSize = 1;
   } else {
-    let smallScreen = document.getElementById('canvas');
+    let smallScreen = document.getElementById('startScreen');
     smallScreen.style.width = "720px";
     smallScreen.style.height = "480px";
+    
     screenSize = 0;
   }
 }
