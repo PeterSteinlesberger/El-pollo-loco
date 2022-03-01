@@ -27,21 +27,14 @@ position: relative;
     align-items: flex-end;
 } 
 
-
 .bottom-div {
     height: 70px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #994409;
     padding: 5px 15px 10px 15px;;
-}
-
-.left-container {
-    width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .start-button {
@@ -69,7 +62,6 @@ border: solid 4px #ffcb00;
 .keyboard-img {
     width: 190px;
     height: 70px;
-    margin-left: -108px;
 }
 
 .keyboard-img:hover {
@@ -79,18 +71,17 @@ border: solid 4px #ffcb00;
 }
 
 .keyboard-img-big {
-    width: 430px;
-    height: 180px;
+    width: 380px;
+    height: 160px;
     margin-bottom: 90px;
     margin-right: 30px;
     margin-left: -12px;
-    
 }
 
 .keyboard-img-big:hover {
     background-color: #ffcb00;;
     opacity: 0.9;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 
@@ -99,7 +90,7 @@ border: solid 4px #ffcb00;
     height: 40px;
     width: 40px;
     margin-bottom: -12px;
-    margin-left: 142px;
+    border: solid 4px  transparent;
 }
 
 .fullscreen-img:hover {
@@ -107,13 +98,10 @@ border: solid 4px #ffcb00;
   border: solid 4px  #ffcb00;
 }
 
-
-
 .sound-btn {
     position: absolute;
    height: 40px;
    width: 40px;
    top: 20px;
    right: 20px;
-
 }
