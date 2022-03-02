@@ -74,21 +74,21 @@ function removeKeyboardImg() {
 
 function fullscreenMode() {
 
-  if(screenSize == 0) {
-  let startScreen = document.getElementById('startScreen');
-  startScreen.style.width = "100%";
-  startScreen.style.height = "100vh";
-  startScreen.style.position = "fixed";
-  startScreen.style.top = "0";
-  startScreen.style.right = "0";
-  startScreen.style.bottom = "0";
-  startScreen.style.left = "0";
-  screenSize = 1;
+  if (screenSize == 0) {
+    let fullScreen = document.getElementById('startScreen');
+    fullScreen.style.width = "100%";
+    fullScreen.style.height = "100vh";
+    fullScreen.style.position = "fixed";
+    fullScreen.style.top = "0";
+    fullScreen.style.right = "0";
+    fullScreen.style.bottom = "0";
+    fullScreen.style.left = "0";
+    screenSize = 1;
   } else {
     let smallScreen = document.getElementById('startScreen');
     smallScreen.style.width = "720px";
     smallScreen.style.height = "480px";
-    
+    smallScreen.style.position = "relative";
     screenSize = 0;
   }
 }
@@ -103,15 +103,15 @@ function whichScreenSize() {
 function playSound() {
   let soundImg = document.getElementById('soundBtn');
 
-  if(soundImg.src == 'http://127.0.0.1:5500/img/7.Marcadores/Icono/soundOff.png') {
-   START_SCREEN_SOUND.volume = 0.3;
-   START_SCREEN_SOUND.loop = true;
-  START_SCREEN_SOUND.play();
-  soundImg.src = 'img/7.Marcadores/Icono/soundOn.png';
- } else {
+  if (soundImg.src == 'http://127.0.0.1:5500/img/7.Marcadores/Icono/soundOff.png') {
+    START_SCREEN_SOUND.volume = 0.3;
+    START_SCREEN_SOUND.loop = true;
+    START_SCREEN_SOUND.play();
+    soundImg.src = 'img/7.Marcadores/Icono/soundOn.png';
+  } else {
     START_SCREEN_SOUND.pause();
     soundImg.src = 'img/7.Marcadores/Icono/soundOff.png';
- }
+  }
 }
 
 

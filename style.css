@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #050301;
- }
+}
 
 canvas {
     display: none;
@@ -18,16 +18,16 @@ canvas {
     display: relative;
 }
 
- .start-screen {
-position: relative;
-    width: 720px; 
+.start-screen {
+    position: relative;
+    width: 720px;
     height: 480px;
     background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
     object-fit: cover;
     background-size: 100%;
     display: flex;
     align-items: flex-end;
-} 
+}
 
 .bottom-div {
     height: 70px;
@@ -36,7 +36,8 @@ position: relative;
     justify-content: space-between;
     align-items: center;
     background-color: #994409;
-    padding: 5px 15px 10px 15px;;
+    padding: 5px 15px 0px 15px;
+    ;
 }
 
 .start-button {
@@ -57,8 +58,8 @@ position: relative;
 }
 
 .start-button:hover {
-text-shadow: 1px 1px 0px #ffcb00;
-border: solid 4px #ffcb00;
+    text-shadow: 1px 1px 0px #ffcb00;
+    border: solid 4px #ffcb00;
 }
 
 .keyboard-img {
@@ -79,7 +80,8 @@ border: solid 4px #ffcb00;
 }
 
 .keyboard-img-big:hover {
-    background-color: #ffcb00;;
+    background-color: #ffcb00;
+    ;
     opacity: 0.9;
     border-radius: 5px;
 }
@@ -90,18 +92,18 @@ border: solid 4px #ffcb00;
     height: 40px;
     width: 40px;
     margin-bottom: -12px;
-    border: solid 4px  transparent;
+    border: solid 4px transparent;
 }
 
 .fullscreen-img:hover {
-  border-radius: 5px;
-  border: solid 4px  #ffcb00;
+    border-radius: 5px;
+    border: solid 4px #ffcb00;
 }
 
 .sound-btn {
     position: absolute;
-   height: 40px;
-   width: 40px;
-   top: 20px;
-   right: 20px;
+    height: 40px;
+    width: 40px;
+    top: 20px;
+    right: 20px;
 }
