@@ -44,6 +44,21 @@ class Character extends MoveableObject {
     'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png'
   ];
 
+
+  IMAGES_CHILL = [
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-2.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-3.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-4.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-5.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-6.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-7.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-8.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-9.png',
+    'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-10.png',
+  ];
+
+
   world;
   speed = 8;
   walking_sound = new Audio('audio/walking.mp3');
@@ -56,7 +71,7 @@ class Character extends MoveableObject {
     this.loadImages(this.IMAGES_JUMPING);
     this.loadImages(this.IMAGES_DEAD);
     this.loadImages(this.IMAGES_HURT);
-    
+    this.loadImages(this.IMAGES_CHILL);
     this.applyGravity();
     this.animate();
   }
@@ -69,9 +84,7 @@ class Character extends MoveableObject {
         this.moveRight();
         this.otherDirection = false;
         this.walking_sound.play();
-      
-      }  
-
+      }
 
       if (this.world.keyboard.LEFT && this.x > 120) {
         this.moveLeft();
@@ -98,12 +111,12 @@ class Character extends MoveableObject {
       }
       if (this.isAboveGround()) {
         this.animateImages(this.IMAGES_JUMPING);
-
-
       } else {
         if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
           //Walking animation
           this.animateImages(this.IMAGES_WALKING);
+        } else {
+          this.animateImages(this.IMAGES_CHILL);
         }
       }
     }, 70);

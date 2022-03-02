@@ -70,7 +70,7 @@ class Endboss extends MoveableObject {
       this.animateImages(this.IMAGES_ATTENTION);
       if (this.isDead()) {
         this.animateImages(this.IMAGES_DEAD);
-        this.y += 22;
+        this.y += 55;
         this.ANGRY_CHICKEN_SOUND.pause();
       } else if (this.isHurt()) {
         this.animateImages(this.IMAGES_HURT);
@@ -91,9 +91,8 @@ class Endboss extends MoveableObject {
           this.animateImages(this.IMAGES_WALKING);
           this.animateImages(this.IMAGES_ATTACK);
           setInterval(() => {
-
-            this.x += 20;
-          }, 5000);
+            this.x += 12;
+          }, 6000);
         }
       }
     }, 185);

@@ -12,6 +12,7 @@ class World {
   gameOverScreen = new GameOverScreen();
   youWonEndscreen = new YouWonEndscreen();
   enemyBarImg = new EnemyBarImg();
+  endboss = new Endboss();
   throwableObjects = [];
   GAMEOVERSCREEN_SOUND = new Audio('audio/gameover-screen.mp3');
   SAD_TRUMPED = new Audio('audio/Sad-trumpet-sound.mp3');
@@ -19,7 +20,7 @@ class World {
   GET_BOTTLE = new Audio('audio/get-bottle.mp3');
   ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
   YOUWON_SOUND = new Audio('audio/won-game-sound.mp3');
-  endboss = new Endboss();
+  
 
 
   constructor(canvas, keyboard) {
