@@ -62,18 +62,20 @@ function startGame() {
   whichScreenSize();
 }
 
+
 function showKeyboardImg() {
   document.getElementById('keyboardImgBig').style.display = "block";
   document.getElementById('keyboardImgSmall').style.display = "none";
 }
+
 
 function removeKeyboardImg() {
   document.getElementById('keyboardImgSmall').style.display = "block";
   document.getElementById('keyboardImgBig').style.display = "none";
 }
 
-function fullscreenMode() {
 
+function fullscreenMode() {
   if (screenSize == 0) {
     let fullScreen = document.getElementById('startScreen');
     fullScreen.style.width = "100%";
@@ -93,6 +95,7 @@ function fullscreenMode() {
   }
 }
 
+
 function whichScreenSize() {
   if (screenSize > 0) {
     canvas.requestFullscreen();
@@ -102,7 +105,6 @@ function whichScreenSize() {
 
 function playSound() {
   let soundImg = document.getElementById('soundBtn');
-
   if (soundImg.src == 'http://127.0.0.1:5500/img/7.Marcadores/Icono/soundOff.png') {
     START_SCREEN_SOUND.volume = 0.3;
     START_SCREEN_SOUND.loop = true;

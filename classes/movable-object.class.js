@@ -6,6 +6,7 @@ class MoveableObject extends DrawableObject {
     acceleration = 2.65;
     energy = 100;
     lastHit = 0;
+    directionBack = false;
 
 
     applyGravity() {
@@ -58,7 +59,7 @@ class MoveableObject extends DrawableObject {
     }
 
     moveLeft() {
-        this.x -= this.speed;
+        this.x -= this.speed; 
     }
 
     jump() {

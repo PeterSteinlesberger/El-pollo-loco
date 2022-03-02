@@ -20,7 +20,7 @@ class World {
   GET_BOTTLE = new Audio('audio/get-bottle.mp3');
   ENDBOSS_SOUND = new Audio('audio/endboss-long-sound.mp3');
   YOUWON_SOUND = new Audio('audio/won-game-sound.mp3');
-  
+
 
 
   constructor(canvas, keyboard) {
