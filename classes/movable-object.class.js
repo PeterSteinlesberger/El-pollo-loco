@@ -1,13 +1,11 @@
 class MoveableObject extends DrawableObject {
 
     speed = 0.11;
-    otherDirection = false;
     speedY = 0;
     acceleration = 2.65;
     energy = 100;
     lastHit = 0;
-    directionBack = false;
-
+    otherDirection = false;
 
     applyGravity() {
         setInterval(() => {
@@ -57,9 +55,9 @@ class MoveableObject extends DrawableObject {
     moveRight() {
         this.x += this.speed;
     }
-
+ 
     moveLeft() {
-        this.x -= this.speed; 
+        this.x -= this.speed;
     }
 
     jump() {

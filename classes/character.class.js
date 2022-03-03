@@ -6,6 +6,7 @@ class Character extends MoveableObject {
   bottles = 0;
   energy = 500;
 
+
   IMAGES_WALKING = [
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png",
     "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-22.png",
@@ -44,7 +45,7 @@ class Character extends MoveableObject {
     'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png'
   ];
 
-  
+
   IMAGES_CHILL = [
     'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png',
     'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-2.png',
@@ -97,11 +98,13 @@ class Character extends MoveableObject {
       this.walking_sound.pause();
       if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
         this.moveRight();
+        this.otherDirection = false;
         this.walking_sound.play();
       }
 
       if (this.world.keyboard.LEFT && this.x > 120) {
         this.moveLeft();
+        this.otherDirection = true;
         this.walking_sound.play();
       }
 
@@ -129,10 +132,11 @@ class Character extends MoveableObject {
           //Walking animation
           this.animateImages(this.IMAGES_WALKING);
         } else {
-          this.animateImages(this.IMAGES_CHILL);
           // if() {
+          //Chill animation  
           //   this.loadImages(this.IMAGES_CHILL_LONG);
-          // }
+          // } else {
+          this.animateImages(this.IMAGES_CHILL);
         }
       }
     }, 70);

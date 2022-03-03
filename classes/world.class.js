@@ -85,6 +85,7 @@ class World {
   addToMap(mo) {
     if (mo.otherDirection) {
       this.flipImage(mo);
+     // this.throwableObjects.otherDirection = true;
     }
     mo.draw(this.ctx);
     mo.drawFrame(this.ctx);
